@@ -107,7 +107,7 @@ function BarChart(props) {
 					})
 				}
 			</div> */}
-			<div className="column is-one-third">
+			{/* <div className="column is-one-third">
 				<table className="table">
 					<thead>
 						<tr>
@@ -132,6 +132,28 @@ function BarChart(props) {
 						}
 					</tbody>
 				</table>
+			</div> */}
+			<div className="column is-one-third">
+				<div className="columns is-mobile is-multiline is-0">
+					{
+						checkData.map((item, index) => {
+							return (
+								<div className="column">
+									<aside className="menu">
+										<ul className="menu-list">
+											<li><a className="is-active">{item.name}</a></li>
+											<ul>
+												<li><a>{item.Protein}</a></li>
+												<li><a>{item.Fat}</a></li>
+												<li><a>{item.Carbo}</a></li>
+											</ul>
+										</ul>
+									</aside>
+								</div>
+							)
+						})
+					}
+				</div>
 			</div>
 			<div className="column is-one-third">
 				<svg width={windowW} height={windowH}>
@@ -208,11 +230,10 @@ function BarChart(props) {
 					体重(kg):
 					<input
 						className="slider has-output-tooltip is-fullwidth is-info"
-						step="1" min="40" max="100" value="50"
+						step="1" min="40" max="100" value={this}
 						type="range"
 						onChange={HandleChangeWeight}
 					/>
-					<output for="sliderWithValue">50</output>
 				</label>
 			</div>
 		</div>
