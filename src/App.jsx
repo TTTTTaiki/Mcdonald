@@ -180,7 +180,8 @@ function BarChart(props) {
 				<br />
 				<label>
 					体重(kg):
-					<input className="slider has-output-tooltip is-fullwidth is-info"
+					<input
+						className="slider has-output-tooltip is-fullwidth is-info"
 						step="1" min="40" max="100" value="50" type="range"
 					/>
 				</label>
