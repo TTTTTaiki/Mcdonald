@@ -66,8 +66,8 @@ function BarChart(props) {
 	const detailH = 20;
 
 	return (
-		<div className="flex">
-			<div className="left">
+		<div className="columns">
+			<div className="column">
 				{
 					checkData.map((item, index) => {
 						return (
@@ -106,7 +106,7 @@ function BarChart(props) {
 					})
 				}
 			</div>
-			<div className="right">
+			<div className="column">
 				<svg width={windowW} height={windowH}>
 					<g transform={`translate(${margin.left}, ${margin.top})`}>
 						{/* x軸 */}
@@ -155,27 +155,27 @@ function BarChart(props) {
 						</g>
 					</g>
 				</svg>
-				<div className="input">
-					<label>
-						体重(kg):
-						<input
-							type="text"
-							value={this}
-							onChange={HandleChangeWeight}
-							placeholder="数字を入力"
-						/>
-					</label>
-					<br />
-					<label>
-						体脂肪率(%):
-						<input
-							type="text"
-							value={this}
-							onChange={HandleChangeBFP}
-							placeholder="数字を入力"
-						/>
-					</label>
-				</div>
+			</div>
+			<div className="column">
+				<label>
+					体重(kg):
+					<input
+						type="text"
+						value={this}
+						onChange={HandleChangeWeight}
+						placeholder="数字を入力"
+					/>
+				</label>
+				<br />
+				<label>
+					体脂肪率(%):
+					<input
+						type="text"
+						value={this}
+						onChange={HandleChangeBFP}
+						placeholder="数字を入力"
+					/>
+				</label>
 			</div>
 		</div>
 	);
