@@ -107,7 +107,7 @@ function BarChart(props) {
 					})
 				}
 			</div> */}
-			<div className="column">
+			<div className="column is-half">
 				<table className="table">
 					<thead>
 						<tr>
@@ -133,7 +133,7 @@ function BarChart(props) {
 					</tbody>
 				</table>
 			</div>
-			<div className="column">
+			<div className="column is-one-third">
 				<svg width={windowW} height={windowH}>
 					<g transform={`translate(${margin.left}, ${margin.top})`}>
 						{/* x軸 */}
