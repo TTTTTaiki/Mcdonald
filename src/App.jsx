@@ -85,7 +85,7 @@ function BarChart(props) {
 									{item.name}
 								</label>
 								{
-									<svg width={detailW * 4} height={detailH} className="detail">
+									<svg width={detailW * 4} height={detailH}>
 										<g transform={`translate(5, 0)`}>
 											<rect x="0" y="0" width={detailW} height={detailH} fill="#FF000060" />
 											<text x="0" y="5" textAlign="center" dominantBaseline="hanging" fontSize="11">{item.Protein}</text>
