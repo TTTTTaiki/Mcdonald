@@ -11,8 +11,8 @@ function BarChart(props) {
 	const nutritionData = ["タンパク質", "脂質", "炭水化物"];
 
 	const chartW = 500;
-	const chartH = 300;
-	const margin = { top: 50, bottom: 50, left: 100, right: 100 };
+	const chartH = 220;
+	const margin = { top: 10, bottom: 50, left: 100, right: 100 };
 	const windowW = chartW + margin.left + margin.right;
 	const windowH = chartH + margin.top + margin.bottom;
 	const lineCol = "black";
@@ -67,7 +67,7 @@ function BarChart(props) {
 	const detailH = 20;
 
 	return (
-		<div className="columns">
+		<div>
 			{/* <div className="column">
 				{
 					checkData.map((item, index) => {
@@ -133,15 +133,15 @@ function BarChart(props) {
 					</tbody>
 				</table>
 			</div> */}
-			<div className="column is-one-third">
-				<div className="columns is-mobile is-multiline is-0">
+			<div className="column is-mobile">
+				<div className="columns is-multiline is-gapless">
 					{
 						checkData.map((item, index) => {
 							return (
 								<div className="column">
 									<aside className="menu">
 										<ul className="menu-list">
-											<li><a className="is-active">{item.name}</a></li>
+											<li><a className="is-active">{item.name.substr(0, 3) + "..."}</a></li>
 											<ul>
 												<li><a>{item.Protein}</a></li>
 												<li><a>{item.Fat}</a></li>
@@ -155,86 +155,78 @@ function BarChart(props) {
 					}
 				</div>
 			</div>
-			<div className="column is-one-third">
-				<svg width={windowW} height={windowH}>
-					<g transform={`translate(${margin.left}, ${margin.top})`}>
-						{/* x軸 */}
-						<g transform={`translate(0, ${chartH})`}>
-							<line x1="0" y1="0" x2={chartW} y2="0" stroke={lineCol} />
-							{
-								barXScale.ticks().map((item, index) => {
-									return (
-										<g key={index} transform={`translate(${barXScale(item)}, 0)`}>
-											<line x1="0" y1={-chartH} x2="0" y2="5" stroke={lineCol} />
-											<text x="0" y="20" textAnchor="middle">{item}</text>
-										</g>
-									)
-								})
-							}
-							<g transform={`translate(${chartW}, 0)`}>
-								<text x="0" y="18" textAlign="left">(単位: g)</text>
+			<div className="columns">
+				<div className="column is-half">
+					<svg width={windowW} height={windowH}>
+						<g transform={`translate(${margin.left}, ${margin.top})`}>
+							{/* x軸 */}
+							<g transform={`translate(0, ${chartH})`}>
+								<line x1="0" y1="0" x2={chartW} y2="0" stroke={lineCol} />
+								{
+									barXScale.ticks().map((item, index) => {
+										return (
+											<g key={index} transform={`translate(${barXScale(item)}, 0)`}>
+												<line x1="0" y1={-chartH} x2="0" y2="5" stroke={lineCol} />
+												<text x="0" y="20" textAnchor="middle">{item}</text>
+											</g>
+										)
+									})
+								}
+								<g transform={`translate(${chartW}, 0)`}>
+									<text x="0" y="18" textAlign="left">(単位: g)</text>
+								</g>
+							</g>
+							{/* y軸 */}
+							<g>
+								<line x1="0" y1="0" x2="0" y2={chartH} stroke={lineCol} />
+								{
+									nutritionData.map((item, index) => {
+										return (
+											<g key={index} transform={`translate(0, ${(index + 1) * yStep})`}>
+												<line x1="0" y1="0" x2="-5" y2="0" stroke={lineCol} />
+												<text x="-10" y="0" textAnchor="end" dominantBaseline="center">{item}</text>
+											</g>
+										);
+									})
+								}
+							</g>
+							{/* BarChart */}
+							<g transform={`translate(0, ${yStep})`}>
+								<rect x="0" y={- barH / 2} width={barXScale(proteinProps.reduce((a, b) => a + b, 0))} height={barH} fill="#FF000099" />
+								<rect x={barXScale(userData[0][0])} y={- userH / 2} width={barXScale(userData[0][1]) - barXScale(userData[0][0])} height={userH} fill="#FF000099" />
+							</g>
+							<g transform={`translate(0, ${yStep * 2})`}>
+								<rect x="0" y={- barH / 2} width={barXScale(fatProps.reduce((a, b) => a + b, 0))} height={barH} fill="#00FF0099" />
+								<rect x={barXScale(userData[1][0])} y={- userH / 2} width={barXScale(userData[1][1]) - barXScale(userData[1][0])} height={userH} fill="#00FF0099" />
+							</g>
+							<g transform={`translate(0, ${yStep * 3})`}>
+								<rect x="0" y={- barH / 2} width={barXScale(carboProps.reduce((a, b) => a + b, 0))} height={barH} fill="#0000FF99" />
+								<rect x={barXScale(userData[2][0])} y={- userH / 2} width={barXScale(userData[2][1]) - barXScale(userData[2][0])} height={userH} fill="#0000FF99" />
 							</g>
 						</g>
-						{/* y軸 */}
-						<g>
-							<line x1="0" y1="0" x2="0" y2={chartH} stroke={lineCol} />
-							{
-								nutritionData.map((item, index) => {
-									return (
-										<g key={index} transform={`translate(0, ${(index + 1) * yStep})`}>
-											<line x1="0" y1="0" x2="-5" y2="0" stroke={lineCol} />
-											<text x="-10" y="0" textAnchor="end" dominantBaseline="center">{item}</text>
-										</g>
-									);
-								})
-							}
-						</g>
-						{/* BarChart */}
-						<g transform={`translate(0, ${yStep})`}>
-							<rect x="0" y={- barH / 2} width={barXScale(proteinProps.reduce((a, b) => a + b, 0))} height={barH} fill="#FF000099" />
-							<rect x={barXScale(userData[0][0])} y={- userH / 2} width={barXScale(userData[0][1]) - barXScale(userData[0][0])} height={userH} fill="#FF000099" />
-						</g>
-						<g transform={`translate(0, ${yStep * 2})`}>
-							<rect x="0" y={- barH / 2} width={barXScale(fatProps.reduce((a, b) => a + b, 0))} height={barH} fill="#00FF0099" />
-							<rect x={barXScale(userData[1][0])} y={- userH / 2} width={barXScale(userData[1][1]) - barXScale(userData[1][0])} height={userH} fill="#00FF0099" />
-						</g>
-						<g transform={`translate(0, ${yStep * 3})`}>
-							<rect x="0" y={- barH / 2} width={barXScale(carboProps.reduce((a, b) => a + b, 0))} height={barH} fill="#0000FF99" />
-							<rect x={barXScale(userData[2][0])} y={- userH / 2} width={barXScale(userData[2][1]) - barXScale(userData[2][0])} height={userH} fill="#0000FF99" />
-						</g>
-					</g>
-				</svg>
-			</div>
-			<div className="column is-one-fifth">
-				<label>
-					体重(kg):
-					<input
-						type="text"
-						value={this}
-						onChange={HandleChangeWeight}
-						placeholder="数字を入力"
-					/>
-				</label>
-				<br />
-				<label>
-					体脂肪率(%):
-					<input
-						type="text"
-						value={this}
-						onChange={HandleChangeBFP}
-						placeholder="数字を入力"
-					/>
-				</label>
-				<br />
-				<label>
-					体重(kg):
-					<input
-						className="slider has-output-tooltip is-fullwidth is-info"
-						step="1" min="40" max="100" value={this}
-						type="range"
-						onChange={HandleChangeWeight}
-					/>
-				</label>
+					</svg>
+				</div>
+				<div className="column is-half">
+					<label>
+						体重(kg):
+						<input
+							className="slider has-output-tooltip is-fullwidth is-info"
+							step="1" min="40" max="100" value={this}
+							type="range"
+							onChange={HandleChangeWeight}
+						/>
+					</label>
+					<br />
+					<label>
+						体脂肪率(%):
+						<input
+							className="slider has-output-tooltip is-fullwidth is-info"
+							step="1" min="10" max="90" value={this}
+							type="range"
+							onChange={HandleChangeBFP}
+						/>
+					</label>
+				</div>
 			</div>
 		</div>
 	);
