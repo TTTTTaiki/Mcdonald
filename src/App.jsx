@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 import React from "react";
 import { useState, useEffect } from "react";
-// import "./App.css";
 import "bulma/css/bulma.css";
 import "bulma-extensions/bulma-slider/dist/js/bulma-slider.min.js";
 
@@ -51,12 +50,10 @@ function BarChart(props) {
 	}
 
 	function HandleChangeWeight(e) {
-		// console.log(e.target.value);
 		setWeight(e.target.value)
 	}
 
 	function HandleChangeBFP(e) {
-		// console.log(e.target.value);
 		setBFP(e.target.value);
 	}
 
@@ -160,9 +157,6 @@ function BarChart(props) {
 							<tr>
 								<th>Select</th>
 								<th>Menu</th>
-								{/* <th><abbr title="Protein">Protein</abbr></th>
-							<th><abbr title="Carbo">Carbo</abbr></th>
-							<th><abbr title="Fat">Fat</abbr></th> */}
 							</tr>
 						</thead>
 						<tbody>
@@ -177,9 +171,6 @@ function BarChart(props) {
 													onChange={HandleChangeData} />
 											</th>
 											<th>{item.name}</th>
-											{/* <th>{item.Protein}</th>
-										<th>{item.Carbo}</th>
-										<th>{item.Fat}</th> */}
 										</tr>
 									)
 								})
@@ -193,9 +184,6 @@ function BarChart(props) {
 							<tr>
 								<th>Select</th>
 								<th>Menu</th>
-								{/* <th><abbr title="Protein">Protein</abbr></th>
-							<th><abbr title="Carbo">Carbo</abbr></th>
-							<th><abbr title="Fat">Fat</abbr></th> */}
 							</tr>
 						</thead>
 						<tbody>
@@ -210,9 +198,6 @@ function BarChart(props) {
 													onChange={HandleChangeData} />
 											</th>
 											<th>{item.name}</th>
-											{/* <th>{item.Protein}</th>
-										<th>{item.Carbo}</th>
-										<th>{item.Fat}</th> */}
 										</tr>
 									)
 								})
