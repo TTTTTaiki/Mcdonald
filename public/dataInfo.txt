@@ -1,0 +1,130 @@
+
+{
+  製品名(String),
+  値段(int, 円),
+  カテゴリー(humburger, side-menu, drink, sweets),
+  時間帯(breakfast,dinner,regular),
+  主要7品目アレルギー(あるorない)
+  [
+    卵
+    乳
+    小麦
+    えび
+    かに
+    そば
+    ピーナッツ
+  ],
+  標準製品重量(double, g/個),
+  栄養(double)
+  [
+    エネルギー(kcal),
+    タンパク質(g),
+    脂質(g),
+    炭水化物(g),
+    食塩相当量(g),
+    ナトリウム(mg),
+    カリウム(mg),
+    カルシウム(mg),
+    リン(mg),
+    鉄(mg),
+    ビタミンA(μg),
+    ビタミンB1(mg),
+    ビタミンB2(mg),
+    ナイアシン(mg),
+    ビタミンC(mg),
+    コレステロール(mg),
+    食物繊維(g)
+  ] 
+}
+
+{
+  "name": "",
+  "price": ,
+  "category": ,
+  "time-zone": "dinner",
+  "allergy": [
+    "Egg",
+    "Milk",
+    "wheat",
+    "Shrimp",
+    "Joining",
+    "Soba",
+    "Peanuts"
+  ],
+  "weight": ,
+  "nutrition": {
+    "Energy": ,
+    "Protein": ,
+    "Fat": ,
+    "Carbo": ,
+    "Salt Eq": ,
+    "Sodium": ,
+    "Pottasium": ,
+    "Calcium": ,
+    "Phosphorus": ,
+    "Iron": ,
+    "Vitamin A": ,
+    "Vitamin B1": ,
+    "Vitamin B2": ,
+    "Niacin": ,
+    "Vitamin C ": ,
+    "Cholesterol": ,
+    "Dietary Fiber": 
+  }
+}
+
+
+
+ポイント制にするてきな
+
+一回の食事あたりの栄養素との比較
+
+{
+  "nutrition": {
+    "energy": 724,
+    "protein": 41.4,
+    "fat": 43.3,
+    "Carbo": 41.9,
+    "Salt Eq": 3.3,
+    "Sodium": 1293,
+    "Pottasium": 587,
+    "Calcium": 147,
+    "Phosphorus": 391,
+    "Iron": 3.8,
+    "Vitamin A": 91,
+    "Vitamin B1": 0.23,
+    "Vitamin B2": 0.36,
+    "Niacin": 14.8,
+    "Vitamin C ": 2,
+    "Cholesterol": 120,
+    "Dietary Fiber": 2.7
+  }
+}
+
+{
+  "name": "",
+  "price": ,
+  "category": ,
+  "time-zone": "dinner",
+  "allergy": [
+    "Egg",
+    "Milk",
+    "wheat",
+    "Shrimp",
+    "Joining",
+    "Soba",
+    "Peanuts"
+  ],
+  "weight": ,
+}
+
+"allergy": [
+    "Egg",
+    "Milk",
+    "wheat"
+  ],
+
+バーガー全部入力完了
+サイドメニュー完了
+
+あとはドリンクとスイーツ
