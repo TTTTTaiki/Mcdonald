@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 // import "./App.css";
 import "bulma/css/bulma.css";
-import "bulma-extensions/bulma-slider";
+// import "bulma-extensions/bulma-slider";
 
 function BarChart(props) {
 	const fullData = props.data1;
