@@ -177,7 +177,7 @@ function BarChart(props) {
 						placeholder="数字を入力"
 					/>
 				</label>
-				<br />
+				{/* <br />
 				<label>
 					体重(kg):
 					<input
@@ -187,7 +187,7 @@ function BarChart(props) {
 						onChange={HandleChangeWeight}
 					/>
 					<output for="sliderWithValue">50</output>
-				</label>
+				</label> */}
 			</div>
 		</div>
 	);
