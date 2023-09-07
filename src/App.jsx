@@ -1,8 +1,8 @@
 import * as d3 from "d3";
 import React from "react";
 import { useState, useEffect } from "react";
-import "./App.css";
-
+// import "./App.css";
+import "bulma/css/bulma.css";
 
 function BarChart(props) {
 	const fullData = props.data1;
