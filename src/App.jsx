@@ -177,6 +177,7 @@ function BarChart(props) {
 						placeholder="数字を入力"
 					/>
 				</label>
+				<br />
 				<input className="slider has-output-tooltip is-fullwidth is-info" step="1" min="40" max="100" value="50" type="range" />
 			</div>
 		</div>
