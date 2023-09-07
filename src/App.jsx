@@ -107,7 +107,7 @@ function BarChart(props) {
 					})
 				}
 			</div> */}
-			<div className="column is-half">
+			<div className="column is-one-third">
 				<table className="table">
 					<thead>
 						<tr>
@@ -183,7 +183,7 @@ function BarChart(props) {
 					</g>
 				</svg>
 			</div>
-			<div className="column">
+			<div className="column is-one-fifth">
 				<label>
 					体重(kg):
 					<input
