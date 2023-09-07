@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import React from "react";
 import { useState, useEffect } from "react";
 import "bulma/css/bulma.css";
-import "bulma-extensions/bulma-slider/dist/js/bulma-slider.min.js";
+// import "bulma-extensions/bulma-slider/dist/css/bulma-slider.min.css";
 
 function BarChart(props) {
 	const fullData = props.data1;
@@ -16,8 +16,19 @@ function BarChart(props) {
 	const windowH = chartH + margin.top + margin.bottom;
 	const lineCol = "black";
 
-	const [weight, setWeight] = useState(80);   //体重、入力で更新可能にする
+	const [sex, setSex] = useState(0);          //性別、男0、女1
+	const [age, setAge] = useState(20);         //年齢
+	const [height, setHeight] = useState(180);  //身長
+	const [weight, setWeight] = useState(80);   //体重
+	const [moment, setMoment] = useState(1.5);
+	const [energy, setEnergy] = useState(1500); //実体重適正エネルギー
+	const [baseEnergy, setBaseEnergy] = useState(1700); //標準体重適正エネルギー
+
 	const [BFP, setBFP] = useState(25);         //体脂肪率
+
+	// const calcProtein = (w, h) => [LBM * 2, LBM * 3];
+	// const calcFat = (w, h) => [LBM * 0.67, LBM * 0.89];
+	// const calcCarbo = (w, h) => [LBM * 5, LBM * 6.5];
 	const calcProtein = (LBM) => [LBM * 2, LBM * 3];
 	const calcFat = (LBM) => [LBM * 0.67, LBM * 0.89];
 	const calcCarbo = (LBM) => [LBM * 5, LBM * 6.5];
@@ -26,7 +37,7 @@ function BarChart(props) {
 	useEffect(() => {
 		const LBM = weight * (100 - BFP) / 100;  //除脂肪体重
 		setUserData([calcProtein(LBM), calcFat(LBM), calcCarbo(LBM)]);
-	}, [weight, BFP]);
+	}, [sex, age, height, weight]);
 
 	//入力された体重から求めたCarboの値を基準に作成している
 	const barXScale = d3.scaleLinear()
@@ -49,10 +60,21 @@ function BarChart(props) {
 		);
 	}
 
-	function HandleChangeWeight(e) {
-		setWeight(e.target.value)
+	function HandleChangeSex(e) {
+		setSex(e.target.value);
 	}
-
+	function HandleChangeAge(e) {
+		setAge(e.target.value);
+	}
+	function HandleChangeWeight(e) {
+		setWeight(e.target.value);
+	}
+	function HandleChangeHeight(e) {
+		setHeight(e.target.value);
+	}
+	function HandleChangeMoment(e) {
+		setMoment(e.target.value);
+	}
 	function HandleChangeBFP(e) {
 		setBFP(e.target.value);
 	}
@@ -255,6 +277,27 @@ function BarChart(props) {
 						</g>
 					</svg>
 
+					<div className="control">
+						<label className="radio">
+							<input type="radio" name="sex" onChange={HandleChangeSex} value="0" />
+							男
+						</label>
+						<label className="radio">
+							<input type="radio" name="sex" onChange={HandleChangeSex} value="1" />
+							女
+						</label>
+					</div>
+					<label>
+						身長(cm):
+						<input
+							className="slider has-output-tooltip is-fullwidth is-info"
+							step="1" min="100" max="200" value={this}
+							type="range"
+							onChange={HandleChangeHeight}
+						/>
+						<output for="sliderWithValue">{height}</output>
+					</label>
+					<br />
 					<label>
 						体重(kg):
 						<input
@@ -263,8 +306,25 @@ function BarChart(props) {
 							type="range"
 							onChange={HandleChangeWeight}
 						/>
+						<output for="sliderWithValue">{weight}</output>
 					</label>
 					<br />
+					<div className="control">
+						<label className="radio">
+							<input type="radio" name="moment" onChange={HandleChangeMoment} value="1.5" />
+							家の中だけで過ごしており、あまり動かない
+						</label>
+						<br />
+						<label className="radio">
+							<input type="radio" name="moment" onChange={HandleChangeMoment} value="1.75" />
+							通勤、買い物で外へ出る程度
+						</label>
+						<br />
+						<label className="radio">
+							<input type="radio" name="moment" onChange={HandleChangeMoment} value="2.0" />
+							立ち仕事、スポーツをする程度
+						</label>
+					</div>
 					<label>
 						体脂肪率(%):
 						<input
@@ -273,6 +333,7 @@ function BarChart(props) {
 							type="range"
 							onChange={HandleChangeBFP}
 						/>
+						<output for="sliderWithValue">{BFP}</output>
 					</label>
 				</div>
 			</div>
