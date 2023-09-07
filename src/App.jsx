@@ -170,10 +170,12 @@ function BarChart(props) {
 								checkData.filter((item) => item.category === "humbuger").map((item, index) => {
 									return (
 										<tr>
-											<input type="checkbox"
-												value={item.isChecked}
-												name={item.name}
-												onChange={HandleChangeData} />
+											<th>
+												<input type="checkbox"
+													value={item.isChecked}
+													name={item.name}
+													onChange={HandleChangeData} />
+											</th>
 											<th>{item.name}</th>
 											{/* <th>{item.Protein}</th>
 										<th>{item.Carbo}</th>
@@ -201,10 +203,12 @@ function BarChart(props) {
 								checkData.filter((item) => item.category === "sideMenu").map((item, index) => {
 									return (
 										<tr>
-											<input type="checkbox"
-												value={item.isChecked}
-												name={item.name}
-												onChange={HandleChangeData} />
+											<th>
+												<input type="checkbox"
+													value={item.isChecked}
+													name={item.name}
+													onChange={HandleChangeData} />
+											</th>
 											<th>{item.name}</th>
 											{/* <th>{item.Protein}</th>
 										<th>{item.Carbo}</th>
