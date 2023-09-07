@@ -168,17 +168,6 @@ function BarChart(props) {
 					/>
 				</label>
 				<br />
-				<br />
-				<p>おはよう</p>
-				<label>
-					体重(kg):
-					<input
-						className="slider has-output-tooltip is-fullwidth is-info"
-						step="1" min="40" max="100" value="50"
-						type="range"
-					/>
-					<output for="sliderWithValue">50</output>
-				</label>
 				<label>
 					体脂肪率(%):
 					<input
@@ -189,6 +178,16 @@ function BarChart(props) {
 					/>
 				</label>
 				<br />
+				<label>
+					体重(kg):
+					<input
+						className="slider has-output-tooltip is-fullwidth is-info"
+						step="1" min="40" max="100" value="50"
+						type="range"
+						onChange={HandleChangeWeight}
+					/>
+					<output for="sliderWithValue">50</output>
+				</label>
 			</div>
 		</div>
 	);
