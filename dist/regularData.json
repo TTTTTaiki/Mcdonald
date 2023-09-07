@@ -1,0 +1,326 @@
+[
+  {
+    "name": "ビッグマック",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 25.9,
+    "Fat": 28.2,
+    "Carbo": 41.9
+  },
+  {
+    "name": "炙り醤油風 ダブル肉厚ビーフ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 38.8,
+    "Fat": 36.1,
+    "Carbo": 36.7
+  },
+  {
+    "name": "炙り醤油風 ベーコントマト肉厚ビーフ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 27.2,
+    "Fat": 23.0,
+    "Carbo": 37.9
+  },
+  {
+    "name": "ダブルチーズバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 24.9,
+    "Fat": 31.8,
+    "Carbo": 2.8
+  },
+  {
+    "name": "てりやきマックバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat",
+      "Shrimp",
+      "Joining",
+      "Peanuts"
+    ],
+    "Protein": 15.4,
+    "Fat": 30.6,
+    "Carbo": 37.6
+  },
+  {
+    "name": "フィレオフィッシュ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat",
+      "Shrimp"
+    ],
+    "Protein": 14.7,
+    "Fat": 14.1,
+    "Carbo": 38.0
+  },
+  {
+    "name": "チキンフィレオ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 20.2,
+    "Fat": 21.9,
+    "Carbo": 48.0
+  },
+  {
+    "name": "てりやきチキンフィレオ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat",
+      "Shrimp",
+      "Joining",
+      "Peanuts"
+    ],
+    "Protein": 20.4,
+    "Fat": 22.2,
+    "Carbo": 53.2
+  },
+  {
+    "name": "ベーコンレタスバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 18.1,
+    "Fat": 19.8,
+    "Carbo": 29.6
+  },
+  {
+    "name": "えびフィレオ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat",
+      "Shrimp"
+    ],
+    "Protein": 12.2,
+    "Fat": 17.2,
+    "Carbo": 46.2
+  },
+  {
+    "name": "スパイシーチキンバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "Wheat"
+    ],
+    "Protein": 14.4,
+    "Fat": 19.8,
+    "Carbo": 38.5
+  },
+  {
+    "name": "スパイシービーフバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 12.8,
+    "Fat": 18.4,
+    "Carbo": 28.3
+  },
+  {
+    "name": "エッグチーズバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 22.2,
+    "Fat": 18.9,
+    "Carbo": 31.2
+  },
+  {
+    "name": "チキンチーズバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 17.2,
+    "Fat": 22.0,
+    "Carbo": 40.3
+  },
+  {
+    "name": "ハンバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 12.8,
+    "Fat": 9.4,
+    "Carbo": 30.3
+  },
+  {
+    "name": "チキンクリスプ",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 14.0,
+    "Fat": 16.4,
+    "Carbo": 38.4
+  },
+  {
+    "name": "チーズバーガー",
+    "category": "humbuger",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 15.8,
+    "Fat": 13.4,
+    "Carbo": 31.0
+  },
+  {
+    "name": "マックフライポテト(S)",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [],
+    "Protein": 2.9,
+    "Fat": 11.2,
+    "Carbo": 28.0
+  },
+  {
+    "name": "マックフライポテト(M)",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [],
+    "Protein": 5.3,
+    "Fat": 20.5,
+    "Carbo": 51.0
+  },
+  {
+    "name": "マックフライポテト(L)",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [],
+    "Protein": 6.6,
+    "Fat": 25.8,
+    "Carbo": 64.3
+  },
+  {
+    "name": "チキンマックナゲット(5ピース)",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 15.3,
+    "Fat": 16.0,
+    "Carbo": 14.3
+  },
+  {
+    "name": "チキンマックナゲット(15ピース)",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 46.0,
+    "Fat": 48.1,
+    "Carbo": 42.8
+  },
+  {
+    "name": "サイドサラダ",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [],
+    "Protein": 0.5,
+    "Fat": 0.1,
+    "Carbo": 2.3
+  },
+  {
+    "name": "えだまめコーン",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [],
+    "Protein": 5.2,
+    "Fat": 3.0,
+    "Carbo": 9.6
+  },
+  {
+    "name": "ヨーグルト",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [
+      "Milk"
+    ],
+    "Protein": 3.3,
+    "Fat": 0.6,
+    "Carbo": 9.0
+  },
+  {
+    "name": "シャカチキ(チキンのみ)",
+    "category": "sideMenu",
+    "timeZone": "regular",
+    "allergy": [
+      "Egg",
+      "Milk",
+      "wheat"
+    ],
+    "Protein": 14.9,
+    "Fat": 12.8,
+    "Carbo": 17.2
+  }
+]

@@ -1,0 +1,1 @@
+.flex{display:flex;border:1px solid #333}.flex div{border:1px solid #333}.right{width:calc(100% - 400px);background-color:#fff;line-height:5px;user-select:none}.left{background-color:#fff;width:400px;line-height:5px;font:italic small-caps 700 16px/2 cursive;font-size:100%;user-select:none}.detail{line-height:200px}
