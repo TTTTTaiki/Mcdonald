@@ -131,7 +131,7 @@ function BarChart(props) {
 					</tbody>
 				</table>
 			</div> */}
-			<div className="column is-mobile">
+			{/* <div className="column is-mobile">
 				<div className="columns is-multiline is-gapless">
 					{
 						checkData.map((item, index) => {
@@ -152,9 +152,71 @@ function BarChart(props) {
 						})
 					}
 				</div>
-			</div>
+			</div> */}
 			<div className="columns">
-				<div className="column is-half">
+				<div className="column">
+					<table className="table table is-bordered is-striped is-narrow is-hoverable">
+						<thead>
+							<tr>
+								<th>Select</th>
+								<th>Menu</th>
+								{/* <th><abbr title="Protein">Protein</abbr></th>
+							<th><abbr title="Carbo">Carbo</abbr></th>
+							<th><abbr title="Fat">Fat</abbr></th> */}
+							</tr>
+						</thead>
+						<tbody>
+							{
+								checkData.filter((item) => item.category === "humbuger").map((item, index) => {
+									return (
+										<tr>
+											<input type="checkbox"
+												value={item.isChecked}
+												name={item.name}
+												onChange={HandleChangeData} />
+											<th>{item.name}</th>
+											{/* <th>{item.Protein}</th>
+										<th>{item.Carbo}</th>
+										<th>{item.Fat}</th> */}
+										</tr>
+									)
+								})
+							}
+						</tbody>
+					</table>
+				</div>
+				<div className="column">
+					<table className="table table is-bordered is-striped is-narrow is-hoverable">
+						<thead>
+							<tr>
+								<th>Select</th>
+								<th>Menu</th>
+								{/* <th><abbr title="Protein">Protein</abbr></th>
+							<th><abbr title="Carbo">Carbo</abbr></th>
+							<th><abbr title="Fat">Fat</abbr></th> */}
+							</tr>
+						</thead>
+						<tbody>
+							{
+								checkData.filter((item) => item.category === "sideMenu").map((item, index) => {
+									return (
+										<tr>
+											<input type="checkbox"
+												value={item.isChecked}
+												name={item.name}
+												onChange={HandleChangeData} />
+											<th>{item.name}</th>
+											{/* <th>{item.Protein}</th>
+										<th>{item.Carbo}</th>
+										<th>{item.Fat}</th> */}
+										</tr>
+									)
+								})
+							}
+						</tbody>
+					</table>
+				</div>
+				<div className="column">
 					<svg width={windowW} height={windowH}>
 						<g transform={`translate(${margin.left}, ${margin.top})`}>
 							{/* x軸 */}
@@ -203,8 +265,7 @@ function BarChart(props) {
 							</g>
 						</g>
 					</svg>
-				</div>
-				<div className="column is-half">
+
 					<label>
 						体重(kg):
 						<input
