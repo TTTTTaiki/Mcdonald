@@ -205,7 +205,7 @@ function Loading() {
 function Title() {
 	return (
 		<h1 className="title">
-			Everyday Mcdonald for healthful life!!
+			Let's go Bigmac!
 		</h1>
 	);
 }
