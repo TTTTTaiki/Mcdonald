@@ -307,7 +307,7 @@ function Loading() {
 function Title() {
 	return (
 		<h1 className="title">
-			Let's go Bigmac!
+			マクドナルドPFCバランス計算
 		</h1>
 	);
 }
