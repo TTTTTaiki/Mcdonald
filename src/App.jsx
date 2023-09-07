@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 // import "./App.css";
 import "bulma/css/bulma.css";
+import "bulma-extensions/bulma-slider";
 
 function BarChart(props) {
 	const fullData = props.data1;
@@ -176,6 +177,7 @@ function BarChart(props) {
 						placeholder="数字を入力"
 					/>
 				</label>
+				<input className="slider has-output-tooltip is-fullwidth is-info" step="1" min="40" max="100" value="50" type="range" />
 			</div>
 		</div>
 	);
