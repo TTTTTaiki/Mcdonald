@@ -185,6 +185,7 @@ function BarChart(props) {
 						className="slider has-output-tooltip is-fullwidth is-info"
 						step="1" min="40" max="100" value="50" type="range"
 					/>
+					<output for="sliderWithValue">50</output>
 				</label>
 			</div>
 		</div>
