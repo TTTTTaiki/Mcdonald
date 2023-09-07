@@ -63,8 +63,6 @@ function BarChart(props) {
 	const yStep = chartH / (nutritionData.length + 1);
 	const barH = yStep * 0.6;
 	const userH = yStep * 0.8;
-	const detailW = 30;
-	const detailH = 20;
 
 	return (
 		<div>
@@ -141,7 +139,7 @@ function BarChart(props) {
 								<div className="column">
 									<aside className="menu">
 										<ul className="menu-list">
-											<li><a className="is-active">{item.name.substr(0, 3) + "..."}</a></li>
+											<li><a className="is-active is-size-7">{item.name.substr(0, 3) + "..."}</a></li>
 											<ul>
 												<li><a>{item.Protein}</a></li>
 												<li><a>{item.Fat}</a></li>
