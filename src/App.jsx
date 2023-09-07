@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 // import "./App.css";
 import "bulma/css/bulma.css";
-// import "bulma-extensions/bulma-slider";
+import "bulma-extensions/bulma-slider/dist/js/bulma-slider.min.js";
 
 function BarChart(props) {
 	const fullData = props.data1;
@@ -68,7 +68,7 @@ function BarChart(props) {
 
 	return (
 		<div className="columns">
-			<div className="column">
+			{/* <div className="column">
 				{
 					checkData.map((item, index) => {
 						return (
@@ -106,6 +106,32 @@ function BarChart(props) {
 						)
 					})
 				}
+			</div> */}
+			<div className="column">
+				<table className="table">
+					<thead>
+						<tr>
+							<th>Menu</th>
+							<th><abbr title="Protein">Protein</abbr></th>
+							<th><abbr title="Carbo">Carbo</abbr></th>
+							<th><abbr title="Fat">Fat</abbr></th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							checkData.map((item, index) => {
+								return (
+									<tr>
+										<th>{item.name}</th>
+										<th>{item.Protein}</th>
+										<th>{item.Carbo}</th>
+										<th>{item.Fat}</th>
+									</tr>
+								)
+							})
+						}
+					</tbody>
+				</table>
 			</div>
 			<div className="column">
 				<svg width={windowW} height={windowH}>
@@ -177,7 +203,7 @@ function BarChart(props) {
 						placeholder="数字を入力"
 					/>
 				</label>
-				{/* <br />
+				<br />
 				<label>
 					体重(kg):
 					<input
@@ -187,7 +213,7 @@ function BarChart(props) {
 						onChange={HandleChangeWeight}
 					/>
 					<output for="sliderWithValue">50</output>
-				</label> */}
+				</label>
 			</div>
 		</div>
 	);
