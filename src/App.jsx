@@ -178,6 +178,7 @@ function BarChart(props) {
 					/>
 				</label>
 				<br />
+				<p>おはよう</p>
 				<label>
 					体重(kg):
 					<input
