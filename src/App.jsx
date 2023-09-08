@@ -184,7 +184,7 @@ function BarChart(props) {
 					<table className="table table is-bordered is-striped is-narrow is-hoverable">
 						<thead>
 							<tr>
-								<th>Select</th>
+								<th></th>
 								<th>Menu</th>
 							</tr>
 						</thead>
@@ -211,7 +211,7 @@ function BarChart(props) {
 					<table className="table table is-bordered is-striped is-narrow is-hoverable">
 						<thead>
 							<tr>
-								<th>Select</th>
+								<th></th>
 								<th>Menu</th>
 							</tr>
 						</thead>
