@@ -26,9 +26,16 @@ function BarChart(props) {
 
 	const [BFP, setBFP] = useState(25);         //体脂肪率
 
-	// const calcProtein = (w, h) => [LBM * 2, LBM * 3];
-	// const calcFat = (w, h) => [LBM * 0.67, LBM * 0.89];
-	// const calcCarbo = (w, h) => [LBM * 5, LBM * 6.5];
+	// const calcProtein = (w, h) => {
+	// 	return [LBM * 2, LBM * 3];
+	// };
+	// const calcFat = (w, h) => {
+	// 	return [LBM * 0.67, LBM * 0.89];
+	// };
+	// const calcCarbo = (w, h) => {
+	// 	return [LBM * 5, LBM * 6.5];
+	// };
+
 	const calcProtein = (LBM) => [LBM * 2, LBM * 3];
 	const calcFat = (LBM) => [LBM * 0.67, LBM * 0.89];
 	const calcCarbo = (LBM) => [LBM * 5, LBM * 6.5];
