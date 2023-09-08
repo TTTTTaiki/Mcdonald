@@ -220,7 +220,7 @@ function BarChart(props) {
 								checkData.filter((item) => item.category === "sideMenu").map((item, index) => {
 									return (
 										<tr>
-											<th>
+											<th className="is-centered">
 												<input type="checkbox"
 													value={item.isChecked}
 													name={item.name}
