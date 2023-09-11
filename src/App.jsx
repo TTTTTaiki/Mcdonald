@@ -181,58 +181,62 @@ function BarChart(props) {
 			</div> */}
 			<div className="columns">
 				<div className="column">
-					<table className="table table is-bordered is-striped is-narrow is-hoverable">
-						<thead>
-							<tr>
-								<th></th>
-								<th>Menu</th>
-							</tr>
-						</thead>
-						<tbody>
-							{
-								checkData.filter((item) => item.category === "humbuger").map((item, index) => {
-									return (
-										<tr>
-											<th>
-												<input type="checkbox"
-													value={item.isChecked}
-													name={item.name}
-													onChange={HandleChangeData} />
-											</th>
-											<th>{item.name}</th>
-										</tr>
-									)
-								})
-							}
-						</tbody>
-					</table>
+					<div className="control">
+						<table className="table table is-bordered is-striped is-narrow is-hoverable">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Menu</th>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									checkData.filter((item) => item.category === "humbuger").map((item, index) => {
+										return (
+											<tr>
+												<th>
+													<input type="checkbox"
+														value={item.isChecked}
+														name={item.name}
+														onChange={HandleChangeData} />
+												</th>
+												<th>{item.name}</th>
+											</tr>
+										)
+									})
+								}
+							</tbody>
+						</table>
+					</div>
 				</div>
 				<div className="column">
-					<table className="table table is-bordered is-striped is-narrow is-hoverable">
-						<thead>
-							<tr>
-								<th></th>
-								<th>Menu</th>
-							</tr>
-						</thead>
-						<tbody>
-							{
-								checkData.filter((item) => item.category === "sideMenu").map((item, index) => {
-									return (
-										<tr>
-											<th className="is-centered">
-												<input type="checkbox"
-													value={item.isChecked}
-													name={item.name}
-													onChange={HandleChangeData} />
-											</th>
-											<th>{item.name}</th>
-										</tr>
-									)
-								})
-							}
-						</tbody>
-					</table>
+					<div className="control">
+						<table className="table table is-bordered is-striped is-narrow is-hoverable">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Menu</th>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									checkData.filter((item) => item.category === "sideMenu").map((item, index) => {
+										return (
+											<tr>
+												<th className="is-centered">
+													<input type="checkbox"
+														value={item.isChecked}
+														name={item.name}
+														onChange={HandleChangeData} />
+												</th>
+												<th>{item.name}</th>
+											</tr>
+										)
+									})
+								}
+							</tbody>
+						</table>
+					</div>
 				</div>
 				<div className="column">
 					<svg width={windowW} height={windowH}>
@@ -284,64 +288,78 @@ function BarChart(props) {
 						</g>
 					</svg>
 
-					<div className="control">
+
+					<div className="field">
 						<label className="radio">
-							<input type="radio" name="sex" onChange={HandleChangeSex} value="0" />
-							男
+							<div className="control">
+								<input type="radio" name="sex" onChange={HandleChangeSex} value="0" />
+								男
+							</div>
 						</label>
 						<label className="radio">
-							<input type="radio" name="sex" onChange={HandleChangeSex} value="1" />
-							女
+							<div className="control">
+								<input type="radio" name="sex" onChange={HandleChangeSex} value="1" />
+								女
+							</div>
 						</label>
 					</div>
-					<label>
-						身長(cm):
+
+
+					<div className="field">
+						<label className="label">身長(cm):</label>
+						<div className="control">
+							<input
+								className="slider is-fullwidth is-info"
+								step="1" min="100" max="200" value={height}
+								type="range"
+								onChange={HandleChangeHeight}
+							/>
+							<output for="sliderWithValue">{height}</output>
+						</div>
+					</div>
+
+					<div className="field">
+						<label className="label">体重(kg):</label>
 						<input
-							className="slider has-output-tooltip is-fullwidth is-info"
-							step="1" min="100" max="200" value={this}
-							type="range"
-							onChange={HandleChangeHeight}
-						/>
-						<output for="sliderWithValue">{height}</output>
-					</label>
-					<br />
-					<label>
-						体重(kg):
-						<input
-							className="slider has-output-tooltip is-fullwidth is-info"
-							step="1" min="40" max="100" value={this}
+							className="slider is-fullwidth is-info"
+							step="1" min="40" max="100" value={weight}
 							type="range"
 							onChange={HandleChangeWeight}
 						/>
 						<output for="sliderWithValue">{weight}</output>
-					</label>
-					<br />
-					<div className="control">
-						<label className="radio">
-							<input type="radio" name="moment" onChange={HandleChangeMoment} value="1.5" />
-							家の中だけで過ごしており、あまり動かない
-						</label>
-						<br />
-						<label className="radio">
-							<input type="radio" name="moment" onChange={HandleChangeMoment} value="1.75" />
-							通勤、買い物で外へ出る程度
-						</label>
-						<br />
-						<label className="radio">
-							<input type="radio" name="moment" onChange={HandleChangeMoment} value="2.0" />
-							立ち仕事、スポーツをする程度
-						</label>
+
 					</div>
-					<label>
-						体脂肪率(%):
-						<input
-							className="slider has-output-tooltip is-fullwidth is-info"
-							step="1" min="10" max="90" value={this}
-							type="range"
-							onChange={HandleChangeBFP}
-						/>
-						<output for="sliderWithValue">{BFP}</output>
-					</label>
+
+					<div className="field">
+						<div className="control">
+							<label className="radio">
+								<input type="radio" name="moment" onChange={HandleChangeMoment} value="1.5" />
+								家の中だけで過ごしており、あまり動かない
+							</label>
+							<br />
+							<label className="radio">
+								<input type="radio" name="moment" onChange={HandleChangeMoment} value="1.75" />
+								通勤、買い物で外へ出る程度
+							</label>
+							<br />
+							<label className="radio">
+								<input type="radio" name="moment" onChange={HandleChangeMoment} value="2.0" />
+								立ち仕事、スポーツをする程度
+							</label>
+						</div>
+					</div>
+					{/* <div className="field">
+						<label>
+							体脂肪率(%):
+							<input
+								className="slider has-output-tooltip is-fullwidth is-info"
+								step="1" min="10" max="90" value={this}
+								type="range"
+								onChange={HandleChangeBFP}
+							/>
+							<output for="sliderWithValue">{BFP}</output>
+						</label>
+					</div> */}
 				</div>
 			</div>
 		</div>
