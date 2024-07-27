@@ -36,9 +36,9 @@ function BarChart(props) {
 	// 	return [LBM * 5, LBM * 6.5];
 	// };
 
-	const calcProtein = (LBM) => [LBM * 2, LBM * 3];
-	const calcFat = (LBM) => [LBM * 0.67, LBM * 0.89];
-	const calcCarbo = (LBM) => [LBM * 5, LBM * 6.5];
+	const calcProtein = (LBM) => [LBM * 2 / 3, LBM * 3 / 3];
+	const calcFat = (LBM) => [LBM * 0.67 / 3, LBM * 0.89 / 3];
+	const calcCarbo = (LBM) => [LBM * 5 / 3, LBM * 6.5 / 3];
 
 	const [userData, setUserData] = useState([[120, 180], [40.2, 60.89], [300, 390]]);
 	useEffect(() => {
@@ -257,18 +257,29 @@ function BarChart(props) {
 								{/* BarChart */}
 								<g transform={`translate(0, ${yStep})`}>
 									<rect x="0" y={- barH / 2} width={barXScale(proteinProps.reduce((a, b) => a + b, 0))} height={barH} fill="#FF000099" />
-									<rect x={barXScale(userData[0][0])} y={- userH / 2} width={barXScale(userData[0][1]) - barXScale(userData[0][0])} height={userH} fill="#FF000099" />
+									<rect x={barXScale(userData[0][0])} y={- userH / 2} width={barXScale(userData[0][1]) - barXScale(userData[0][0])} height={userH} fill="#FF000050" />
+									<line x1={barXScale(userData[0][0])} y1={-userH / 2} x2={barXScale(userData[0][0])} y2={userH / 2} stroke={lineCol} strokeWidth="2" />
+									<line x1={barXScale(userData[0][1])} y1={-userH / 2} x2={barXScale(userData[0][1])} y2={userH / 2} stroke={lineCol} strokeWidth="2" />
 								</g>
 								<g transform={`translate(0, ${yStep * 2})`}>
 									<rect x="0" y={- barH / 2} width={barXScale(fatProps.reduce((a, b) => a + b, 0))} height={barH} fill="#00FF0099" />
-									<rect x={barXScale(userData[1][0])} y={- userH / 2} width={barXScale(userData[1][1]) - barXScale(userData[1][0])} height={userH} fill="#00FF0099" />
+									<rect x={barXScale(userData[1][0])} y={- userH / 2} width={barXScale(userData[1][1]) - barXScale(userData[1][0])} height={userH} fill="#00FF0050" />
+									<line x1={barXScale(userData[1][0])} y1={-userH / 2} x2={barXScale(userData[1][0])} y2={userH / 2} stroke={lineCol} strokeWidth="2" />
+									<line x1={barXScale(userData[1][1])} y1={-userH / 2} x2={barXScale(userData[1][1])} y2={userH / 2} stroke={lineCol} strokeWidth="2" />
 								</g>
 								<g transform={`translate(0, ${yStep * 3})`}>
 									<rect x="0" y={- barH / 2} width={barXScale(carboProps.reduce((a, b) => a + b, 0))} height={barH} fill="#0000FF99" />
-									<rect x={barXScale(userData[2][0])} y={- userH / 2} width={barXScale(userData[2][1]) - barXScale(userData[2][0])} height={userH} fill="#0000FF99" />
+									<rect x={barXScale(userData[2][0])} y={- userH / 2} width={barXScale(userData[2][1]) - barXScale(userData[2][0])} height={userH} fill="#0000FF50" />
+									<line x1={barXScale(userData[2][0])} y1={-userH / 2} x2={barXScale(userData[2][0])} y2={userH / 2} stroke={lineCol} strokeWidth="2" />
+									<line x1={barXScale(userData[2][1])} y1={-userH / 2} x2={barXScale(userData[2][1])} y2={userH / 2} stroke={lineCol} strokeWidth="2" />
 								</g>
 							</g>
 						</svg>
+					</div>
+					<div className="column">
+						<p>
+							グラフ中の枠は適正摂取量なので、枠に収まるように食べましょう
+						</p>
 					</div>
 				</div>
 			</div>
